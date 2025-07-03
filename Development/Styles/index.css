@@ -119,14 +119,14 @@
 }
 
 .btn_animated span {
-    color: #fff;
+    color: var(--white);
     position: relative;
     transition: color 0.3s ease;
     z-index: 1;
 }
 
 .btn_animated:hover span {
-    color: #000;
+    color: var(--black);
 }
 
 
@@ -163,4 +163,85 @@
 .btn_animated:hover:after,
 .btn_animated:hover:before {
     --progress: 0;
+}
+
+/* Hamburger */
+.hamburger {
+    cursor: pointer;
+}
+
+.hamburger input {
+    display: none;
+}
+
+.hamburger svg {
+    position: fixed;
+    right: 2%;
+    top: 16px;
+    height: 2.4em;
+    z-index: 10;
+    transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line {
+    fill: none;
+    stroke: var(--white);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 3;
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+        stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line-top-bottom {
+    stroke-dasharray: 12 63;
+}
+
+.hamburger input:checked+svg {
+    transform: rotate(-45deg);
+}
+
+.hamburger input:checked+svg .line-top-bottom {
+    stroke-dasharray: 20 300;
+    stroke-dashoffset: -32.42;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+/* Sidebar */
+.mobile_menu_wrapper {
+    display: none;
+}
+
+.mobile_sidebar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 260px;
+    height: 100vh;
+    background: #222;
+    transition: right 0.4s ease;
+    padding: 60px 20px;
+    z-index: 5;
+}
+
+/* При активации чекбокса — показать */
+#menu-toggle:checked~.mobile_sidebar {
+    right: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-items, .nav_btn {
+        display: none;
+    }
+
+    .logo a img {
+        width: 140px;
+    }
+
+    .mobile_menu_wrapper {
+        display: block;
+    }
 }
