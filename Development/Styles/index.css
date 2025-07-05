@@ -239,6 +239,7 @@
 
 .footer_top {
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .footer_top,
@@ -329,6 +330,7 @@
 .footer_main {
     padding-top: 20px;
     padding-bottom: 70px;
+    flex-wrap: wrap;
 }
 
 .footer_main .footer_text {
@@ -389,11 +391,14 @@
 }
 
 .footer_links ul li a {
+    display: block;
     font-weight: 500;
     font-size: 14px;
     color: var(--white);
     text-decoration: none;
     transition: all 0.3s ease;
+    max-width: 146px;
+    width: 100%;
 }
 
 .footer_links ul li a:hover {
@@ -431,5 +436,35 @@
 
     .mobile_menu_wrapper {
         display: block;
+    }
+
+    /* Footer */
+    .footer_main {
+        padding-bottom: 50px;
+    }
+
+    .footer_links {
+        flex-direction: column;
+        justify-content: start;
+        gap: 30px;
+    }
+
+    .footer_top {
+        display: none;
+    }
+
+    .footer_main {
+        gap: 20px;
+    }
+
+    .footer_bottom {
+        flex-direction: column;
+        gap: 14px;
+        font-size: 12px;
+        align-items: start;
+    }
+
+    .footer_links ul li a {
+        max-width: 200px;
     }
 }
