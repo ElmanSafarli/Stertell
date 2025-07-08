@@ -40,4 +40,17 @@ $(document).ready(function () {
   } else {
     console.warn("Some elements are missing.");
   }
+
+  // FaQs
+  $(".faq").first().addClass("activeFaq").find(".faq_answer").slideDown();
+
+  $(".faq").click(function () {
+    const isOpen = $(this).hasClass("activeFaq");
+
+    $(".faq").removeClass("activeFaq").find(".faq_answer").slideUp();
+
+    if (!isOpen) {
+      $(this).addClass("activeFaq").find(".faq_answer").slideDown();
+    }
+  });
 });
