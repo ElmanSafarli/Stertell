@@ -53,4 +53,25 @@ $(document).ready(function () {
       $(this).addClass("activeFaq").find(".faq_answer").slideDown();
     }
   });
+
+  // Contact Form Label Animation
+  const $inputs = $(".user_input input, .user_textarea textarea");
+
+  $inputs.each(function () {
+    if ($(this).val().trim() !== "") {
+      $(this).addClass("filled");
+    }
+  });
+
+  $inputs.on("focus", function () {
+    $(this).addClass("filled");
+  });
+
+  $inputs.on("blur", function () {
+    if ($(this).val().trim() === "") {
+      $(this).removeClass("filled");
+    }
+  });
+
+  $("#country_selector").countrySelect();
 });

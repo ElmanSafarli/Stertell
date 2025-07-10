@@ -268,6 +268,7 @@
     justify-content: center;
     gap: 52px;
     margin-top: 110px;
+    margin-bottom: 100px;
 }
 
 .importance_text h2 {
@@ -589,7 +590,6 @@
 /* Contact us */
 #contact_us {
     padding: 100px 0;
-    margin-top: 100px;
 }
 
 .contact_us_title {
@@ -657,10 +657,10 @@
 }
 
 /* User Inputs */
-.contact_us_inputs {
+.contact_us_inputs .grid_input {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-rows: repeat(4, 1fr);
     grid-column-gap: 18px;
     grid-row-gap: 20px;
 }
@@ -681,11 +681,12 @@
     background: #1a1a1a;
     width: 100%;
     border-radius: 12px;
-    overflow: hidden;
+    /* overflow: hidden; */
     position: relative;
 }
 
-.contact_us_inputs .user_input input {
+.contact_us_inputs .user_input input,
+.contact_us_inputs .user_textarea textarea {
     background: none;
     border: none;
     outline: none;
@@ -693,9 +694,18 @@
     height: 100%;
     color: var(--white);
     padding: 0 20px;
+    background-color: #1a1a1a;
+    border-radius: 12px;
 }
 
-.contact_us_inputs .user_input label {
+.contact_us_inputs .user_textarea textarea {
+    padding: 20px;
+    resize: none;
+}
+
+.contact_us_inputs .user_input label,
+.contact_us_inputs .user_textarea label {
+    padding: 0 20px;
     position: absolute;
     top: 50%;
     transition: .5s;
@@ -708,9 +718,112 @@
     color: #C5C5C5;
 }
 
-.user_textarea {
-    grid-area: 5 / 1 / 7 / 3;
+.country-select.inside input, .country-select.inside input[type=text] {
+    font-weight: 500;
+    font-size: 14px;
+    color: #C5C5C5;
+    font-family: "Poppins", sans-serif;
 }
+
+.contact_us_inputs .user_textarea label {
+    top: 40px;
+}
+
+.user_textarea {
+    margin-top: 20px;
+    background-color: #1a1a1a;
+    height: 198px !important;
+}
+
+.contact_us_inputs .user_input input:focus+label,
+.contact_us_inputs .user_input input.filled+label,
+.contact_us_inputs .user_textarea textarea:focus+label,
+.contact_us_inputs .user_textarea textarea.filled+label {
+    top: 0;
+    left: 22px;
+    font-size: 12px;
+    z-index: 99999;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill {
+    box-shadow: 0 0 0 1000px #1a1a1a inset !important;
+    -webkit-text-fill-color: #fff !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.country-select {
+    width: 100%;
+    height: 100%;
+    padding: 0 20px;
+}
+
+.country-select.inside .selected-flag {
+    margin-left: 20px;
+}
+
+.contact_us_form form button {
+    border-radius: 16px;
+    padding: 24px 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--accent);
+    overflow: hidden;
+    transition: all 0.2s;
+    cursor: pointer;
+    border: none;
+    font-weight: 500;
+    font-size: 20px;
+    color: var(--white);
+    margin-top: 20px;
+}
+
+.contact_us_form form button span {
+    display: block;
+    margin-left: 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+.contact_us_form form button svg {
+    display: block;
+    transform-origin: center center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.contact_us_form form button:hover .svg-wrapper {
+    animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+.contact_us_form form button:hover svg {
+    transform: translateX(1.5em) rotate(45deg) scale(1.1);
+}
+
+.contact_us_form form button:hover span {
+    transform: translateX(12em);
+}
+
+.contact_us_form form button:active {
+    transform: scale(0.95);
+}
+
+@keyframes fly-1 {
+    from {
+        transform: translateY(0.1em);
+    }
+
+    to {
+        transform: translateY(-0.1em);
+    }
+}
+
+
+
 
 /* FaQs */
 .faqs_content {
@@ -824,6 +937,29 @@
     .importance_text ul li p {
         flex: 1;
     }
+
+    /* Contact us */
+    .contact_us_inputs .grid_input {
+        grid-column-gap: 8px;
+        grid-row-gap: 10px;
+    }
+
+    .user_textarea {
+        margin-top: 10px;
+    }
+
+    .contact_us_inputs .user_input label,
+    .contact_us_inputs .user_textarea label {
+        left: 8px;
+    }
+
+    .contact_us_form {
+        gap: 16px;
+    }
+
+    .contact-info {
+        width: 350px;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -915,6 +1051,47 @@
     .stertellHelp_content h2 {
         margin-top: 12px;
     }
+
+    /* Contact */
+    .contact_us_form {
+        flex-direction: column;
+    }
+
+    .contact_us_form form {
+        order: 2;
+    }
+
+    .contact-info,
+    .contact_us_form form {
+        width: 100%;
+    }
+
+    .contact_us_inputs .user_input label,
+    .contact_us_inputs .user_textarea label {
+        left: 0px;
+        font-size: 12px;
+    }
+
+    .contact_us_inputs .user_input input:focus+label,
+    .contact_us_inputs .user_input input.filled+label,
+    .contact_us_inputs .user_textarea textarea:focus+label,
+    .contact_us_inputs .user_textarea textarea.filled+label {
+        left: 6px;
+    }
+
+    .country-select.inside input,
+    .country-select.inside input[type=text] {
+        font-size: 12px;
+    }
+
+    .country-select .country-list .country-name {
+        font-size: 12px;
+    }
+
+    .country-select .country-list {
+        z-index: 9999 ! important;
+
+    }
 }
 
 @media screen and (max-width: 425px) {
@@ -986,5 +1163,18 @@
     .solution_panel .sp_number,
     .solution_panel .sp_top .spt_midlle h3 {
         font-size: 20px;
+    }
+
+    /* faQs */
+    .faqs_control p {
+        font-size: 15px;
+    }
+
+    .faq_answer {
+        margin-top: 10px;
+    }
+
+    .faq_answer p {
+        font-weight: 400;
     }
 }

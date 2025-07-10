@@ -179,7 +179,7 @@
     right: 2%;
     top: 16px;
     height: 2.4em;
-    z-index: 10;
+    z-index: 1010;
     transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -224,7 +224,7 @@
     background: #222;
     transition: right 0.4s ease;
     padding: 60px 20px;
-    z-index: 5;
+    z-index: 1005;
 }
 
 #menu-toggle:checked~.mobile_sidebar {
