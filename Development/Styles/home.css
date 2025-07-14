@@ -78,6 +78,7 @@
     max-width: 402px;
     width: 100%;
     font-size: 15px;
+
 }
 
 .header_bottom {
@@ -89,9 +90,19 @@
 .header_bottom .header_image {
     position: relative;
     border-radius: 22px;
+    overflow: hidden;
     height: 300px;
-    background: #454545;
+    background-color: #000309;
     flex: 1
+}
+
+.header_bottom .header_image img {
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .header_bottom .header_btm_info {
@@ -129,56 +140,6 @@
 .star3 {
     top: 105%;
     left: 10%;
-}
-
-/* Solutions Line */
-.solutions_line {
-    padding: 18px 0;
-    background-color: var(--accent);
-}
-
-
-.solutions_line_scroller {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-}
-
-.solutions_line_content,
-.solution_line_item {
-    display: flex;
-    align-items: center;
-}
-
-.solutions_line_content {
-    gap: 60px;
-    animation: scroll-left 40s linear infinite;
-}
-
-.solution_line_item {
-    gap: 16px;
-    flex: 0 0 auto;
-}
-
-.solution_line_item p {
-    font-weight: 500;
-    font-size: 18px;
-    color: var(--white);
-}
-
-/* Анимация движения */
-@keyframes scroll-left {
-    0% {
-        transform: translateX(0%);
-    }
-
-    100% {
-        transform: translateX(-50%);
-    }
-}
-
-.solutions_line_scroller:hover .solutions_line_content {
-    animation-play-state: paused;
 }
 
 /* Section name */
@@ -1095,6 +1056,11 @@ select:-webkit-autofill {
 }
 
 @media screen and (max-width: 425px) {
+    .section_name p {
+        font-size: 14px;
+    }
+
+    /* Header */
     .header_bottom {
         flex-direction: column;
     }
@@ -1176,5 +1142,9 @@ select:-webkit-autofill {
 
     .faq_answer p {
         font-weight: 400;
+    }
+
+    .faqs_title {
+        font-size: 32px;
     }
 }

@@ -210,6 +210,28 @@
     display: none;
 }
 
+/* Pages Main styles */
+.page_name {
+    font-weight: 600;
+    font-size: 44px;
+    width: 80%;
+    text-align: center;
+    color: var(--white);
+    margin: 120px auto 26px auto;
+}
+
+.page_path {
+    font-weight: 400;
+    font-size: 20px;
+    color: var(--white);
+    text-align: center;
+    padding-bottom: 82px;
+}
+
+.page_path span {
+    color: var(--accent);
+}
+
 /* Sidebar */
 .mobile_menu_wrapper {
     display: none;
@@ -227,8 +249,79 @@
     z-index: 1005;
 }
 
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: none;
+}
+
+#menu-toggle:checked~.overlay {
+    display: block;
+}
+
 #menu-toggle:checked~.mobile_sidebar {
     right: 0;
+}
+
+.mobile_sidebar ul li a {
+    color: var(--white);
+}
+
+.mobile_sidebar ul li {
+    padding: 10px 0;
+}
+
+
+/* Solutions Line */
+.solutions_line {
+    padding: 18px 0;
+    background-color: var(--accent);
+}
+
+
+.solutions_line_scroller {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.solutions_line_content,
+.solution_line_item {
+    display: flex;
+    align-items: center;
+}
+
+.solutions_line_content {
+    gap: 60px;
+    animation: scroll-left 40s linear infinite;
+}
+
+.solution_line_item {
+    gap: 16px;
+    flex: 0 0 auto;
+}
+
+.solution_line_item p {
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--white);
+}
+
+/* Анимация движения */
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.solutions_line_scroller:hover .solutions_line_content {
+    animation-play-state: paused;
 }
 
 /* Footer */
@@ -394,7 +487,7 @@
     display: block;
     font-weight: 500;
     font-size: 14px;
-    color: var(--white);
+    color: #939393;
     text-decoration: none;
     transition: all 0.3s ease;
     max-width: 146px;
@@ -436,6 +529,17 @@
 
     .mobile_menu_wrapper {
         display: block;
+    }
+
+    /* Pages Main styles */
+    .page_name {
+        font-size: 26px;
+        margin: 100px auto 20px auto;
+    }
+
+    .page_path {
+        font-size: 16px;
+        padding-bottom: 50px;
     }
 
     /* Footer */

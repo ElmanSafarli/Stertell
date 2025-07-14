@@ -12,6 +12,12 @@
       SterTell – Global A2P SMS, Messaging & Telecom Monetization Platform
     </title>
 
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/Development/assets/stertell_favicon.svg"
+    />
+
     <!-- Стили -->
     <link rel="stylesheet" href="./Styles/main.css" />
     <link rel="stylesheet" href="./Styles/index.css" />
@@ -235,7 +241,7 @@
       <nav class="max_width">
         <div class="navbar_content">
           <div class="logo">
-            <a href="/"
+            <a href="/Development/index.html"
               ><img
                 width="180"
                 style="filter: grayscale(1) brightness(1000%)"
@@ -245,7 +251,7 @@
           </div>
           <div class="nav-items">
             <ul class="nav_links">
-              <li><a href="">Home</a></li>
+              <li><a href="/Development/index.html">Home</a></li>
               <li><a href="">About us</a></li>
               <li class="solutions_dropdown">
                 <span>Solutions</span>
@@ -257,7 +263,7 @@
                   <li><a href="">Corporate Solution</a></li>
                 </ul>
               </li>
-              <li><a href="">APİ</a></li>
+              <li><a href="/Development/Pages/api.html">APİ</a></li>
               <li><a href="">Contact us</a></li>
             </ul>
           </div>
@@ -277,16 +283,18 @@
                 <path class="line" d="M7 16 27 16"></path>
               </svg>
 
+              <div class="overlay"></div>
+
               <div class="mobile_sidebar">
                 <ul>
-                  <li><a href="">Home</a></li>
+                  <li><a href="/Development/index.html">Home</a></li>
                   <li><a href="">About Us</a></li>
                   <li><a href="">Messaging</a></li>
                   <li><a href="">New Projects – RCS</a></li>
                   <li><a href="">Enterprises</a></li>
                   <li><a href="">Protection and Testing</a></li>
                   <li><a href="">Corporate Solution</a></li>
-                  <li><a href="">API</a></li>
+                  <li><a href="/Development/Pages/api.html">API</a></li>
                   <li><a href="">Contact Us</a></li>
                 </ul>
               </div>
@@ -310,14 +318,12 @@
               <div class="service"><p>Voice Caller</p></div>
             </div>
             <div class="hr"></div>
-            <p>
-              We empower mobile operators and enterprises with the tools to
-              deliver messages securely, detect fraud, and optimize traffic to
-              drive maximum revenue.
-            </p>
+            <p class="header-anim-typewriter" id="myElement"></p>
           </div>
           <div class="header_bottom">
-            <div class="header_image"><img src="" alt="" /></div>
+            <div class="header_image">
+              <img src="./assets/himg.png" alt="" />
+            </div>
             <div class="header_btm_info">
               <div>
                 <h3>850+</h3>
@@ -1333,8 +1339,16 @@
               <div class="contact-info-item">
                 <h4>Stay Connected</h4>
                 <div class="social_medias">
-                  <a href=""><i class="fa-brands fa-facebook-f"></i></a>
-                  <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
+                  <a
+                    href="https://www.facebook.com/profile.php?id=100086738514430"
+                    aria-label="facebook"
+                    ><i class="fa-brands fa-facebook-f"></i
+                  ></a>
+                  <a
+                    href="https://www.linkedin.com/company/stertell/"
+                    aria-label="linkedin"
+                    ><i class="fa-brands fa-linkedin-in"></i
+                  ></a>
                   <a href=""><i class="fa-brands fa-telegram"></i></a>
                 </div>
               </div>
@@ -1417,6 +1431,12 @@
         </div>
       </div>
     </section>
+
+    <div class="partners_logos">
+      <marquee behavior="" direction="">
+        <img src="" alt="" />
+      </marquee>
+    </div>
 
     <section id="faqs">
       <div class="max_width faqs_content">
@@ -1813,7 +1833,7 @@
         <div class="footer_main">
           <div>
             <div class="footer_logo">
-              <a href="">
+              <a href="/Development/index.html">
                 <img
                   width="186"
                   style="filter: grayscale(1) brightness(1000%)"
@@ -1830,10 +1850,16 @@
               <a href="" aria-label="instagram">
                 <i class="fa-brands fa-instagram"></i>
               </a>
-              <a href="" aria-label="linkedin">
+              <a
+                href="https://www.linkedin.com/company/stertell/"
+                aria-label="linkedin"
+              >
                 <i class="fa-brands fa-linkedin-in"></i>
               </a>
-              <a href="" aria-label="facebook">
+              <a
+                href="https://www.facebook.com/profile.php?id=100086738514430"
+                aria-label="facebook"
+              >
                 <i class="fa-brands fa-facebook-f"></i>
               </a>
               <a href="" aria-label="telegram">
@@ -1878,8 +1904,10 @@
       crossorigin="anonymous"
     ></script>
     <!-- Скрипты -->
+
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="./assets/country-select-js-master/country-select-js-master/build/js/countrySelect.js"></script>
+    <script src="https://unpkg.com/typeit/dist/index.umd.js"></script>
 
     <script src="./App/index.js"></script>
   </body>

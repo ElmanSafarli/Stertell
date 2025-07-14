@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Integrate SterTell's secure SMS HTTP API for fast and reliable message delivery. Send bulk SMS via GET or POST requests, manage delivery, and ensure high message throughput."
+    />
+
+    <title>
+      SMS HTTP API Integration – Send & Manage Bulk SMS Securely | SterTell
+    </title>
+
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/Development/assets/stertell_favicon.svg"
+    />
+
+    <!-- Стили -->
+    <link rel="stylesheet" href="../Styles/main.css" />
+    <link rel="stylesheet" href="../Styles/index.css" />
+    <link rel="stylesheet" href="../Styles/api.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css"
+    />
+  </head>
+
+  <body>
+    <div id="preloader">
+      <div class="preloader_logo">
+        <svg
+          width="300"
+          viewBox="0 0 1276 1209"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="462"
+            cy="475"
+            r="82"
+            fill="#2B2DAD"
+            class="dot"
+            style="--i: 0"
+          />
+          <circle
+            cx="749"
+            cy="475"
+            r="82"
+            fill="#2B2DAD"
+            class="dot"
+            style="--i: 1"
+          />
+          <circle
+            cx="764.5"
+            cy="739.5"
+            r="97.5"
+            fill="#2B2DAD"
+            class="dot"
+            style="--i: 2"
+          />
+          <circle
+            cx="477.5"
+            cy="756.5"
+            r="97.5"
+            fill="#2B2DAD"
+            class="dot"
+            style="--i: 3"
+          />
+          <circle
+            cx="1025"
+            cy="464"
+            r="71"
+            fill="#2B2DAD"
+            class="dot"
+            style="--i: 4"
+          />
+          <circle
+            cx="1025"
+            cy="713"
+            r="71"
+            fill="#2B2DAD"
+            class="dot"
+            style="--i: 5"
+          />
+          <circle
+            cx="1016"
+            cy="917"
+            r="57"
+            fill="#2B2DAD"
+            class="dot"
+            style="--i: 6"
+          />
+          <circle
+            cx="787.5"
+            cy="936.5"
+            r="68.5"
+            fill="#2B2DAD"
+            class="dot"
+            style="--i: 7"
+          />
+          <circle
+            cx="500.5"
+            cy="959.5"
+            r="68.5"
+            fill="#2B2DAD"
+            class="dot"
+            style="--i: 8"
+          />
+          <circle
+            cx="501.5"
+            cy="1169.5"
+            r="39.5"
+            fill="#2B2DAD"
+            class="dot"
+            style="--i: 9"
+          />
+          <circle
+            cx="787.5"
+            cy="1154.5"
+            r="39.5"
+            fill="#2B2DAD"
+            class="dot"
+            style="--i: 10"
+          />
+          <circle
+            cx="265.5"
+            cy="932.5"
+            r="68.5"
+            fill="#2B2DAD"
+            class="dot"
+            style="--i: 11"
+          />
+          <circle
+            cx="256"
+            cy="464"
+            r="71"
+            fill="#2B2DAD"
+            class="dot"
+            style="--i: 12"
+          />
+          <circle
+            cx="242.5"
+            cy="699.5"
+            r="57.5"
+            fill="#2B2DAD"
+            class="dot"
+            style="--i: 13"
+          />
+          <circle
+            cx="255.5"
+            cy="257.5"
+            r="60.5"
+            fill="#2B2DAD"
+            class="dot"
+            style="--i: 14"
+          />
+          <circle
+            cx="483.5"
+            cy="248.5"
+            r="60.5"
+            fill="#2B2DAD"
+            class="dot"
+            style="--i: 15"
+          />
+          <circle
+            cx="501"
+            cy="73"
+            r="39"
+            fill="#2B2DAD"
+            class="dot"
+            style="--i: 16"
+          />
+          <circle
+            cx="726"
+            cy="39"
+            r="39"
+            fill="#2B2DAD"
+            class="dot"
+            style="--i: 17"
+          />
+          <circle
+            cx="772"
+            cy="249"
+            r="84"
+            fill="#2B2DAD"
+            class="dot"
+            style="--i: 18"
+          />
+          <circle
+            cx="1027.5"
+            cy="248.5"
+            r="68.5"
+            fill="#2B2DAD"
+            class="dot"
+            style="--i: 19"
+          />
+          <circle
+            cx="37.5"
+            cy="474.5"
+            r="37.5"
+            fill="#2B2DAD"
+            class="dot"
+            style="--i: 20"
+          />
+          <circle
+            cx="37.5"
+            cy="702.5"
+            r="37.5"
+            fill="#2B2DAD"
+            class="dot"
+            style="--i: 21"
+          />
+          <circle
+            cx="1224"
+            cy="464"
+            r="44"
+            fill="#2B2DAD"
+            class="dot"
+            style="--i: 22"
+          />
+          <circle
+            cx="1232"
+            cy="730"
+            r="44"
+            fill="#2B2DAD"
+            class="dot"
+            style="--i: 23"
+          />
+        </svg>
+      </div>
+    </div>
+
+    <div class="dark_item">
+      <nav class="max_width">
+        <div class="navbar_content">
+          <div class="logo">
+            <a href="/Development/index.html"
+              ><img
+                width="180"
+                style="filter: grayscale(1) brightness(1000%)"
+                src="../assets/Stertell-logo.png"
+                alt=""
+            /></a>
+          </div>
+          <div class="nav-items">
+            <ul class="nav_links">
+              <li><a href="/Development/index.html">Home</a></li>
+              <li><a href="">About us</a></li>
+              <li class="solutions_dropdown">
+                <span>Solutions</span>
+                <ul class="solutions_dropdown_items">
+                  <li><a href="">Messaging</a></li>
+                  <li><a href="">New Projects – RCS</a></li>
+                  <li><a href="">Enterprises</a></li>
+                  <li><a href="">Protection and Testing</a></li>
+                  <li><a href="">Corporate Solution</a></li>
+                </ul>
+              </li>
+              <li><a href="/Development/Pages/api.html">APİ</a></li>
+              <li><a href="">Contact us</a></li>
+            </ul>
+          </div>
+
+          <div class="nav_btn">
+            <a href="" class="btn_animated"><span>Let's Talk</span></a>
+          </div>
+
+          <div class="mobile_menu_wrapper">
+            <label for="menu-toggle" class="hamburger">
+              <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+              <svg viewBox="0 0 32 32">
+                <path
+                  class="line line-top-bottom"
+                  d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
+                ></path>
+                <path class="line" d="M7 16 27 16"></path>
+              </svg>
+
+              <div class="overlay"></div>
+
+              <div class="mobile_sidebar">
+                <ul>
+                  <li><a href="/Development/index.html">Home</a></li>
+                  <li><a href="">About Us</a></li>
+                  <li><a href="">Messaging</a></li>
+                  <li><a href="">New Projects – RCS</a></li>
+                  <li><a href="">Enterprises</a></li>
+                  <li><a href="">Protection and Testing</a></li>
+                  <li><a href="">Corporate Solution</a></li>
+                  <li><a href="">API</a></li>
+                  <li><a href="/Development/Pages/api.html">Contact Us</a></li>
+                </ul>
+              </div>
+            </label>
+          </div>
+        </div>
+      </nav>
+      <h1 class="page_name">SMS HTTP API Documentation</h1>
+      <p class="page_path">Home / <span>API</span></p>
+    </div>
+    <div class="solutions_line">
+      <div class="solutions_line_scroller">
+        <div class="solutions_line_content">
+          <div class="solution_line_item">
+            <svg
+              width="33"
+              height="32"
+              viewBox="0 0 33 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.5 0L18.2898 12.7835L29.4002 6.21242L20.5216 15.5821L32.5863 20.1716L19.7251 19.0719L23.6591 31.366L16.5 20.625L9.34092 31.366L13.2749 19.0719L0.413689 20.1716L12.4784 15.5821L3.59978 6.21242L14.7102 12.7835L16.5 0Z"
+                fill="white"
+              />
+            </svg>
+            <p>A2P Messaging</p>
+          </div>
+          <div class="solution_line_item">
+            <svg
+              width="33"
+              height="32"
+              viewBox="0 0 33 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.5 0L18.2898 12.7835L29.4002 6.21242L20.5216 15.5821L32.5863 20.1716L19.7251 19.0719L23.6591 31.366L16.5 20.625L9.34092 31.366L13.2749 19.0719L0.413689 20.1716L12.4784 15.5821L3.59978 6.21242L14.7102 12.7835L16.5 0Z"
+                fill="white"
+              />
+            </svg>
+            <p>SMS Firewall</p>
+          </div>
+          <div class="solution_line_item">
+            <svg
+              width="33"
+              height="32"
+              viewBox="0 0 33 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.5 0L18.2898 12.7835L29.4002 6.21242L20.5216 15.5821L32.5863 20.1716L19.7251 19.0719L23.6591 31.366L16.5 20.625L9.34092 31.366L13.2749 19.0719L0.413689 20.1716L12.4784 15.5821L3.59978 6.21242L14.7102 12.7835L16.5 0Z"
+                fill="white"
+              />
+            </svg>
+            <p>RCS Solutions</p>
+          </div>
+          <div class="solution_line_item">
+            <svg
+              width="33"
+              height="32"
+              viewBox="0 0 33 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.5 0L18.2898 12.7835L29.4002 6.21242L20.5216 15.5821L32.5863 20.1716L19.7251 19.0719L23.6591 31.366L16.5 20.625L9.34092 31.366L13.2749 19.0719L0.413689 20.1716L12.4784 15.5821L3.59978 6.21242L14.7102 12.7835L16.5 0Z"
+                fill="white"
+              />
+            </svg>
+            <p>Traffic Monetization</p>
+          </div>
+          <div class="solution_line_item">
+            <svg
+              width="33"
+              height="32"
+              viewBox="0 0 33 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.5 0L18.2898 12.7835L29.4002 6.21242L20.5216 15.5821L32.5863 20.1716L19.7251 19.0719L23.6591 31.366L16.5 20.625L9.34092 31.366L13.2749 19.0719L0.413689 20.1716L12.4784 15.5821L3.59978 6.21242L14.7102 12.7835L16.5 0Z"
+                fill="white"
+              />
+            </svg>
+            <p>Fraud Detection</p>
+          </div>
+          <div class="solution_line_item">
+            <svg
+              width="33"
+              height="32"
+              viewBox="0 0 33 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.5 0L18.2898 12.7835L29.4002 6.21242L20.5216 15.5821L32.5863 20.1716L19.7251 19.0719L23.6591 31.366L16.5 20.625L9.34092 31.366L13.2749 19.0719L0.413689 20.1716L12.4784 15.5821L3.59978 6.21242L14.7102 12.7835L16.5 0Z"
+                fill="white"
+              />
+            </svg>
+            <p>P2P Messaging</p>
+          </div>
+          <div class="solution_line_item">
+            <svg
+              width="33"
+              height="32"
+              viewBox="0 0 33 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.5 0L18.2898 12.7835L29.4002 6.21242L20.5216 15.5821L32.5863 20.1716L19.7251 19.0719L23.6591 31.366L16.5 20.625L9.34092 31.366L13.2749 19.0719L0.413689 20.1716L12.4784 15.5821L3.59978 6.21242L14.7102 12.7835L16.5 0Z"
+                fill="white"
+              />
+            </svg>
+            <p>P2A Messaging</p>
+          </div>
+          <div class="solution_line_item">
+            <svg
+              width="33"
+              height="32"
+              viewBox="0 0 33 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.5 0L18.2898 12.7835L29.4002 6.21242L20.5216 15.5821L32.5863 20.1716L19.7251 19.0719L23.6591 31.366L16.5 20.625L9.34092 31.366L13.2749 19.0719L0.413689 20.1716L12.4784 15.5821L3.59978 6.21242L14.7102 12.7835L16.5 0Z"
+                fill="white"
+              />
+            </svg>
+            <p>Telecom Security</p>
+          </div>
+          <div class="solution_line_item">
+            <svg
+              width="33"
+              height="32"
+              viewBox="0 0 33 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.5 0L18.2898 12.7835L29.4002 6.21242L20.5216 15.5821L32.5863 20.1716L19.7251 19.0719L23.6591 31.366L16.5 20.625L9.34092 31.366L13.2749 19.0719L0.413689 20.1716L12.4784 15.5821L3.59978 6.21242L14.7102 12.7835L16.5 0Z"
+                fill="white"
+              />
+            </svg>
+            <p>Traffic Monetization</p>
+          </div>
+          <div class="solution_line_item">
+            <svg
+              width="33"
+              height="32"
+              viewBox="0 0 33 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.5 0L18.2898 12.7835L29.4002 6.21242L20.5216 15.5821L32.5863 20.1716L19.7251 19.0719L23.6591 31.366L16.5 20.625L9.34092 31.366L13.2749 19.0719L0.413689 20.1716L12.4784 15.5821L3.59978 6.21242L14.7102 12.7835L16.5 0Z"
+                fill="white"
+              />
+            </svg>
+            <p>Fraud Detection</p>
+          </div>
+          <div class="solution_line_item">
+            <svg
+              width="33"
+              height="32"
+              viewBox="0 0 33 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.5 0L18.2898 12.7835L29.4002 6.21242L20.5216 15.5821L32.5863 20.1716L19.7251 19.0719L23.6591 31.366L16.5 20.625L9.34092 31.366L13.2749 19.0719L0.413689 20.1716L12.4784 15.5821L3.59978 6.21242L14.7102 12.7835L16.5 0Z"
+                fill="white"
+              />
+            </svg>
+            <p>P2P Messaging</p>
+          </div>
+          <div class="solution_line_item">
+            <svg
+              width="33"
+              height="32"
+              viewBox="0 0 33 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.5 0L18.2898 12.7835L29.4002 6.21242L20.5216 15.5821L32.5863 20.1716L19.7251 19.0719L23.6591 31.366L16.5 20.625L9.34092 31.366L13.2749 19.0719L0.413689 20.1716L12.4784 15.5821L3.59978 6.21242L14.7102 12.7835L16.5 0Z"
+                fill="white"
+              />
+            </svg>
+            <p>P2A Messaging</p>
+          </div>
+          <div class="solution_line_item">
+            <svg
+              width="33"
+              height="32"
+              viewBox="0 0 33 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.5 0L18.2898 12.7835L29.4002 6.21242L20.5216 15.5821L32.5863 20.1716L19.7251 19.0719L23.6591 31.366L16.5 20.625L9.34092 31.366L13.2749 19.0719L0.413689 20.1716L12.4784 15.5821L3.59978 6.21242L14.7102 12.7835L16.5 0Z"
+                fill="white"
+              />
+            </svg>
+            <p>Telecom Security</p>
+          </div>
+          <div class="solution_line_item">
+            <svg
+              width="33"
+              height="32"
+              viewBox="0 0 33 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.5 0L18.2898 12.7835L29.4002 6.21242L20.5216 15.5821L32.5863 20.1716L19.7251 19.0719L23.6591 31.366L16.5 20.625L9.34092 31.366L13.2749 19.0719L0.413689 20.1716L12.4784 15.5821L3.59978 6.21242L14.7102 12.7835L16.5 0Z"
+                fill="white"
+              />
+            </svg>
+            <p>Traffic Monetization</p>
+          </div>
+          <div class="solution_line_item">
+            <svg
+              width="33"
+              height="32"
+              viewBox="0 0 33 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.5 0L18.2898 12.7835L29.4002 6.21242L20.5216 15.5821L32.5863 20.1716L19.7251 19.0719L23.6591 31.366L16.5 20.625L9.34092 31.366L13.2749 19.0719L0.413689 20.1716L12.4784 15.5821L3.59978 6.21242L14.7102 12.7835L16.5 0Z"
+                fill="white"
+              />
+            </svg>
+            <p>Fraud Detection</p>
+          </div>
+          <div class="solution_line_item">
+            <svg
+              width="33"
+              height="32"
+              viewBox="0 0 33 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.5 0L18.2898 12.7835L29.4002 6.21242L20.5216 15.5821L32.5863 20.1716L19.7251 19.0719L23.6591 31.366L16.5 20.625L9.34092 31.366L13.2749 19.0719L0.413689 20.1716L12.4784 15.5821L3.59978 6.21242L14.7102 12.7835L16.5 0Z"
+                fill="white"
+              />
+            </svg>
+            <p>P2P Messaging</p>
+          </div>
+          <div class="solution_line_item">
+            <svg
+              width="33"
+              height="32"
+              viewBox="0 0 33 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.5 0L18.2898 12.7835L29.4002 6.21242L20.5216 15.5821L32.5863 20.1716L19.7251 19.0719L23.6591 31.366L16.5 20.625L9.34092 31.366L13.2749 19.0719L0.413689 20.1716L12.4784 15.5821L3.59978 6.21242L14.7102 12.7835L16.5 0Z"
+                fill="white"
+              />
+            </svg>
+            <p>P2A Messaging</p>
+          </div>
+          <div class="solution_line_item">
+            <svg
+              width="33"
+              height="32"
+              viewBox="0 0 33 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.5 0L18.2898 12.7835L29.4002 6.21242L20.5216 15.5821L32.5863 20.1716L19.7251 19.0719L23.6591 31.366L16.5 20.625L9.34092 31.366L13.2749 19.0719L0.413689 20.1716L12.4784 15.5821L3.59978 6.21242L14.7102 12.7835L16.5 0Z"
+                fill="white"
+              />
+            </svg>
+            <p>Telecom Security</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="api-section">
+        <h2>GET Request (HTTP)</h2>
+        <p class="description">Send SMS using HTTP GET method:</p>
+        <pre><code class="language-http">http://1.1.1.1:8001/api?
+  username=&lt;username&gt;&amp;
+  password=&lt;password&gt;&amp;
+  ani=&lt;ani&gt;&amp;
+  dnis=&lt;dnis&gt;&amp;
+  message=&lt;message&gt;&amp;
+  command=submit&amp;
+  serviceType=&lt;serviceType&gt;&amp;
+  longMessageMode=&lt;longMessageMode&gt;
+</code></pre>
+      </div>
+
+      <div class="api-section">
+        <h2>GET Request (HTTPS)</h2>
+        <p class="description">Use HTTPS for secure communication:</p>
+        <pre><code class="language-url">https://domainname:8002/api?
+  username=&lt;username&gt;&amp;
+  password=&lt;password&gt;&amp;
+  ani=&lt;ani&gt;&amp;
+  dnis=&lt;dnis&gt;&amp;
+  message=&lt;message&gt;&amp;
+  command=submit&amp;
+  serviceType=&lt;serviceType&gt;&amp;
+  longMessageMode=&lt;longMessageMode&gt;
+</code></pre>
+      </div>
+
+      <div class="api-section">
+        <h2>POST Request (credentials in URL)</h2>
+        <p class="description">
+          Send JSON payload with credentials in the URL:
+        </p>
+        <pre><code class="language-bash">curl -H "Content-Type: application/json" -X POST \
+  -d '{"ani":"ani","dnis":"dnis","message":"test"}' \
+  "http://1.1.1.1:8001/api?command=submit&amp;username=username&amp;password=password"
+</code></pre>
+      </div>
+
+      <div class="api-section">
+        <h2>POST Request (credentials in JSON body)</h2>
+        <p class="description">
+          Send everything in JSON format including credentials:
+        </p>
+        <pre><code class="language-bash">curl -H "Content-Type: application/json" -X POST \
+  -d '{
+    "username": "username",
+    "password": "password",
+    "command": "submit",
+    "ani": "ani",
+    "dnis": "dnis",
+    "message": "test"
+  }' \
+  "http://1.1.1.1:8001/api"
+</code></pre>
+      </div>
+
+      <div class="note">
+        <strong>Note:</strong> To send multiple SMS messages, add several
+        comma-separated DNIS to the
+        <code style="color: rebeccapurple">&lt;dnis&gt;</code> field.
+      </div>
+
+      <div class="api-doc-table-wrapper">
+        <div class="overflow-x-auto">
+          <table class="api-params-table">
+            <thead>
+              <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+                <th>Required</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>command</code></td>
+                <td>
+                  Request type. Possible values: <code>submit</code>,
+                  <code>query</code>, <code>mo</code>. To send a message over
+                  HTTP, specify <code>command=submit</code>.
+                </td>
+                <td><span class="required">Yes</span></td>
+              </tr>
+              <tr>
+                <td><code>dnis</code></td>
+                <td>
+                  Destination number. Must be in international E.164 format. Max
+                  15 digits. Length limit: 2048 symbols or 100 numbers. If
+                  exceeded, returns <code>400 Bad Request</code>. Cannot use
+                  multiple for <code>longMessageMode=split_or_payload</code>.
+                </td>
+                <td><span class="required">Yes</span></td>
+              </tr>
+              <tr>
+                <td><code>message</code></td>
+                <td>Message text.</td>
+                <td><span class="required">Yes</span></td>
+              </tr>
+              <tr>
+                <td><code>password</code></td>
+                <td>Account password.</td>
+                <td><span class="required">Yes</span></td>
+              </tr>
+              <tr>
+                <td><code>serviceType</code></td>
+                <td>
+                  Service type for registered interconnection. Can be blank. Max
+                  length: 9 bytes.
+                </td>
+                <td><span class="required">Yes</span></td>
+              </tr>
+              <tr>
+                <td><code>username</code></td>
+                <td>Account login.</td>
+                <td><span class="required">Yes</span></td>
+              </tr>
+              <tr>
+                <td><code>ani</code></td>
+                <td>
+                  Caller ID. Alphanumeric up to 32 characters. May vary by
+                  route.
+                </td>
+                <td><span class="optional">No</span></td>
+              </tr>
+              <tr>
+                <td><code>dataCoding</code></td>
+                <td>
+                  Encoding scheme (int). Options: 0 (default), 1 (ASCII), 3
+                  (Latin1), 6 (Cyrillic), 7 (Hebrew), 8 (UCS2), 10
+                  (ISO-2022-JP), 14 (KSC5601).
+                </td>
+                <td><span class="optional">No</span></td>
+              </tr>
+              <tr>
+                <td><code>esmClass</code></td>
+                <td>SMPP esm_class value. Integer: 0–255.</td>
+                <td><span class="optional">No</span></td>
+              </tr>
+              <tr>
+                <td><code>flash</code></td>
+                <td>
+                  0 (regular) or 1 (flash). Flash messages display on screen and
+                  aren't stored.
+                </td>
+                <td><span class="optional">No</span></td>
+              </tr>
+              <tr>
+                <td><code>longMessageMode</code></td>
+                <td>
+                  Type of long message processing:
+                  <ul>
+                    <li><code>cut</code>: Trim to 140 bytes.</li>
+                    <li>
+                      <code>split</code> or <code>split_sar</code>: Use UDH or
+                      SAR headers.
+                    </li>
+                    <li>
+                      <code>single_id_split</code>: Common message ID for all
+                      parts.
+                    </li>
+                    <li>
+                      <code>payload</code>: Sends text via
+                      <code>message_payload</code>.
+                    </li>
+                    <li>
+                      <code>split_or_payload</code>: Hybrid, not for multiple
+                      DNIS.
+                    </li>
+                  </ul>
+                  Splitting depends on <code>dataCoding</code>. Default:
+                  <code>cut</code>.
+                </td>
+                <td><span class="optional">No</span></td>
+              </tr>
+              <tr>
+                <td><code>incMsgId</code></td>
+                <td>
+                  Client message ID (max 64 chars). Used to correlate split
+                  messages with suffixes like <code>-1</code>, <code>-2</code>.
+                </td>
+                <td><span class="optional">No</span></td>
+              </tr>
+              <tr>
+                <td><code>srcTon, srcNpi, dstTon, dstNpi</code></td>
+                <td>
+                  SMPP address parameters (Sender ID and Destination number).
+                  Integers.
+                </td>
+                <td><span class="optional">No</span></td>
+              </tr>
+              <tr>
+                <td><code>priorityFlag</code></td>
+                <td>SMPP priority flag. 0 or 1.</td>
+                <td><span class="optional">No</span></td>
+              </tr>
+              <tr>
+                <td><code>registeredDelivery</code></td>
+                <td>SMPP delivery receipt flag. 0 or 1.</td>
+                <td><span class="optional">No</span></td>
+              </tr>
+              <tr>
+                <td><code>replaceIfPresentFlag</code></td>
+                <td>SMPP replace flag. 0 or 1.</td>
+                <td><span class="optional">No</span></td>
+              </tr>
+              <tr>
+                <td><code>silent</code></td>
+                <td>
+                  Send silent SMS. <code>0</code> = not silent. Any non-zero =
+                  silent. <br />Message is not shown or notified on user device
+                  (depends on vendor).
+                </td>
+                <td><span class="required">Yes</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <section class="response-section" id="response-format">
+        <h2>✅ Response Format</h2>
+
+        <p>
+          When the request is <strong>successfully processed</strong>, the
+          server responds with:
+        </p>
+        <div class="response-box">
+          HTTP/1.1 200 OK Content-Type: application/json { "message_id":
+          "alss-a1b2c3d4-e5f67890" }
+        </div>
+
+        <h3>📦 Response with Multiple Segments</h3>
+        <p>This response occurs when:</p>
+        <ul>
+          <li>The request contains multiple DNIS values (comma-separated)</li>
+          <li>
+            <code>longMessageMode = split</code> or <code>split_sar</code> and
+            the message is too long
+          </li>
+        </ul>
+        <div class="response-box">
+          HTTP/1.1 200 OK Content-Type: application/json [ { "dnis": "34511121",
+          "message_id": "5b4c46a8-8dc9-44b4-f55f-3bef56819305", "segment_num":
+          "1" }, { "dnis": "34511121", "message_id":
+          "5b4c46a8-46bc-7ee6-4a16-7d4e5a0d14af", "segment_num": "2" } ]
+        </div>
+
+        <h3>❌ Rejection Scenarios</h3>
+
+        <p><strong>1. No Compatible Routes Found</strong></p>
+        <div class="response-box error">
+          HTTP/1.1 400 Bad Request Content-Type: text/html; charset=UTF-8 NO
+          ROUTES
+        </div>
+
+        <p><strong>2. Invalid Username or Password</strong></p>
+        <div class="response-box error">
+          HTTP/1.1 401 Unauthorized Content-Type: text/html; charset=UTF-8 not
+          authorized (check login and password)
+        </div>
+
+        <p><strong>3. Service Type Too Long</strong></p>
+        <div class="response-box error">
+          HTTP/1.1 400 Bad Request Content-Type: text/html; charset=UTF-8
+          Service type is invalid
+        </div>
+
+        <p><strong>4. Message Detected as a Loop</strong></p>
+        <div class="response-box error">
+          HTTP/1.1 508 Loop Detected Content-Type: text/html; charset=UTF-8 loop
+          detected
+        </div>
+      </section>
+
+      <section class="response-section" id="sms-status-request">
+        <h1>📩 SMS Status Request</h1>
+        <p>
+          The links below are intended for requesting delivery reports over HTTP
+          from the client side.
+        </p>
+
+        <h2>🔗 Request Format:</h2>
+        <div class="response-box">
+          http://1.1.1.1:8001/api?username=&lt;username&gt;&amp;password=&lt;password&gt;&amp;messageId=&lt;messageId&gt;&amp;command=query
+        </div>
+
+        <h2>📌 Parameters</h2>
+        <table class="styled-table">
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>username</code></td>
+              <td>Login (user identification)</td>
+            </tr>
+            <tr>
+              <td><code>password</code></td>
+              <td>Password for authentication</td>
+            </tr>
+            <tr>
+              <td><code>messageId</code></td>
+              <td>Message identifier received with the submission response</td>
+            </tr>
+            <tr>
+              <td><code>command</code></td>
+              <td>Request type. Must be set to <code>query</code></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p><br />All parameters are obligatory.<br /></p>
+
+        <p><br /><strong>Response format:</strong></p>
+
+        <p>
+          <br />
+          In case of successful processing, the status in the header of the HTTP
+          response is 200 OK. The response body contains the one of the
+          following possible values:
+        </p>
+
+        <table class="styled-table">
+          <thead>
+            <tr>
+              <th>Status Code</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>ENROUTE</code></td>
+              <td>
+                Message is in routing stage. This status may be returned while
+                the message is in SENT status.
+              </td>
+            </tr>
+            <tr>
+              <td><code>DELIVRD</code></td>
+              <td>Message was successfully delivered to the subscriber.</td>
+            </tr>
+            <tr>
+              <td><code>EXPIRED</code></td>
+              <td>
+                Message storage period has expired without successful delivery.
+              </td>
+            </tr>
+            <tr>
+              <td><code>DELETED</code></td>
+              <td>Message was deleted before delivery could occur.</td>
+            </tr>
+            <tr>
+              <td><code>UNDELIV</code></td>
+              <td>Message could not be delivered.</td>
+            </tr>
+            <tr>
+              <td><code>ACCEPTD</code></td>
+              <td>Message has been accepted by the SMSC for delivery.</td>
+            </tr>
+            <tr>
+              <td><code>UNKNOWN</code></td>
+              <td>
+                Message status is unknown. This may happen if the client queries
+                too late, after data has been cleared from the memory (default
+                TTL is 24h).
+              </td>
+            </tr>
+            <tr>
+              <td><code>REJECTD</code></td>
+              <td>
+                Message was rejected by the SMSC. Can also indicate internal
+                failures (e.g., <code>NO ROUTES</code>).
+              </td>
+            </tr>
+            <tr>
+              <td><code>IM_EXPD</code></td>
+              <td>
+                Delivery report not received from the IM provider within the
+                configured <code>im_ttl</code> timeout.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="response-section" id="sms-status-response">
+        <h2>📩 SMS Status Response</h2>
+        <p>
+          Below are the possible responses returned when querying SMS delivery
+          status:
+        </p>
+
+        <h4>✅ Successful Response Example</h4>
+        <div class="response-block">
+          <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "status": "DELIVRD",
+  "delivery_time": "20210922093309",
+  "mccmnc": "214099",
+  "error_code": "000",
+  "system_delivery_time": "210922093309"
+}
+    </pre
+          >
+        </div>
+
+        <p><strong>Explanation of fields:</strong></p>
+        <ul>
+          <li>
+            <code>delivery_time</code>: Time when message was delivered (format:
+            YYYYMMDDHHMMSS)
+          </li>
+          <li><code>mccmnc</code>: E212 code identifying the mobile network</li>
+          <li><code>error_code</code>: Delivery error code</li>
+          <li>
+            <code>system_delivery_time</code>: Time when delivery report was
+            received by the system (YYMMDDHHMMSS)
+          </li>
+        </ul>
+
+        <h4>📄 Unknown Status Example</h4>
+        <div class="response-block">
+          <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "status": "UNKNOWN",
+  "delivery_time": "",
+  "mccmnc": ""
+}
+    </pre
+          >
+        </div>
+
+        <h4>❌ Unauthorized Access</h4>
+        <div class="response-block error">
+          <pre>
+HTTP/1.1 401 Unauthorized
+Content-Type: text/html; charset=UTF-8
+
+not authorized (check login and password)
+    </pre
+          >
+        </div>
+
+        <h4>⚠️ Invalid <code>service_type</code> Length</h4>
+        <div class="response-block error">
+          <pre>
+HTTP/1.1 400 Bad Request
+Content-Type: text/html; charset=UTF-8
+
+Service type is invalid
+    </pre
+          >
+        </div>
+      </section>
+    </div>
+
+    <footer class="dark_item">
+      <div class="footer_content max_width">
+        <div class="footer_top">
+          <h2>Let's <span>Connect</span> there</h2>
+          <a href="">
+            <span>Contact us</span>
+            <span class="arrow">
+              <svg
+                width="17"
+                height="14"
+                viewBox="0 0 17 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1 6.1C0.502944 6.1 0.1 6.50294 0.1 7C0.1 7.49706 0.502944 7.9 1 7.9V6.1ZM16.6364 7.6364C16.9879 7.28492 16.9879 6.71508 16.6364 6.3636L10.9088 0.636039C10.5574 0.284567 9.98751 0.284567 9.63604 0.636039C9.28457 0.987511 9.28457 1.55736 9.63604 1.90883L14.7272 7L9.63604 12.0912C9.28457 12.4426 9.28457 13.0125 9.63604 13.364C9.98751 13.7154 10.5574 13.7154 10.9088 13.364L16.6364 7.6364ZM1 7V7.9H16V7V6.1H1V7Z"
+                  fill="#fff"
+                />
+              </svg>
+            </span>
+          </a>
+        </div>
+        <div class="footer_main">
+          <div>
+            <div class="footer_logo">
+              <a href="/Development/index.html">
+                <img
+                  width="186"
+                  style="filter: grayscale(1) brightness(1000%)"
+                  src="../assets/Stertell-logo.png"
+                  alt="SterTell logo"
+                />
+              </a>
+            </div>
+            <p class="footer_text">
+              SterTell — Trusted partner for global telecom solutions,
+              messaging, and network protection.
+            </p>
+            <div class="social_links_f">
+              <a href="" aria-label="instagram">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/company/stertell/"
+                aria-label="linkedin"
+              >
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a
+                href="https://www.facebook.com/profile.php?id=100086738514430"
+                aria-label="facebook"
+              >
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a href="" aria-label="telegram">
+                <i class="fa-brands fa-telegram"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer_links">
+            <ul>
+              <h4>Navigation</h4>
+              <li><a href="">Home</a></li>
+              <li><a href="">About us</a></li>
+              <li><a href="">Messaging</a></li>
+              <li><a href="">New Projects – RCS</a></li>
+              <li><a href="">Enterprises</a></li>
+              <li><a href="">Protection and Testing</a></li>
+              <li><a href="">Corporate Solution</a></li>
+              <li><a href="">API</a></li>
+            </ul>
+            <ul>
+              <h4>Contact us</h4>
+              <li><a href=""> +944 444 4444</a></li>
+              <li><a href=""> +944 444 4444</a></li>
+              <li><a href="">info@SterTell.com</a></li>
+              <li>
+                <a href="">Georgia, Tbilisi, Varketili, building 305a, #48</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer_bottom">
+          <span>© 2023 Uyuldata Ltd (Cyprus). All rights reserved</span>
+          <a href="">Use Terms & Conditions | Privacy Policy</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/d17c83b3d5.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Скрипты -->
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="../assets/country-select-js-master/country-select-js-master/build/js/countrySelect.js"></script>
+    <script src="https://unpkg.com/typeit/dist/index.umd.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <script src="../App/index.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+  </body>
+</html>

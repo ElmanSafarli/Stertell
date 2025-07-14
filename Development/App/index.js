@@ -11,20 +11,40 @@ $(document).ready(function () {
   });
 
   $(document).on("pjax:start", function () {
-    $("#preloader").fadeIn(400);
-    $("html").addClass("preloader-active");
+    if ($("#preloader").length > 0) {
+      $("#preloader").fadeIn(400);
+      $("html").addClass("preloader-active");
+    }
   });
 
   $(document).on("pjax:end", function () {
-    setTimeout(function () {
-      $("#preloader").fadeOut(500, function () {
-        $("html").removeClass("preloader-active");
-      });
-    }, 1000);
+    if ($("#preloader").length > 0) {
+      setTimeout(function () {
+        $("#preloader").fadeOut(500, function () {
+          $("html").removeClass("preloader-active");
+        });
+      }, 1000);
+    }
   });
 
-  // Solution Panel
-  if ($(".sptm_bottom").length > 0) {
+  // Type Animation (only if #myElement exists and TypeIt is available)
+  if ($("#myElement").length > 0 && typeof TypeIt !== "undefined") {
+    new TypeIt("#myElement", {
+      strings:
+        "We empower mobile operators and enterprises with the tools to deliver messages securely, detect fraud, and optimize traffic to drive maximum revenue.",
+      speed: 100,
+    }).go();
+  }
+
+  // Mobile sidebar close on overlay click
+  if ($(".overlay").length > 0 && $("#menu-toggle").length > 0) {
+    $(".overlay").on("click", function () {
+      $("#menu-toggle").prop("checked", false);
+    });
+  }
+
+  // Solution Panel logic
+  if ($(".sptm_bottom").length > 0 && $(".solution_panel").length > 0) {
     $(".sptm_bottom").hide();
     $(".solution_panel:first .sptm_bottom")
       .addClass("activeSolutionPanel")
@@ -37,41 +57,46 @@ $(document).ready(function () {
         .addClass("activeSolutionPanel")
         .slideDown(300);
     });
-  } else {
-    console.warn("Some elements are missing.");
   }
 
-  // FaQs
-  $(".faq").first().addClass("activeFaq").find(".faq_answer").slideDown();
+  // FaQs logic
+  if ($(".faq").length > 0) {
+    $(".faq").first().addClass("activeFaq").find(".faq_answer").slideDown();
 
-  $(".faq").click(function () {
-    const isOpen = $(this).hasClass("activeFaq");
+    $(".faq").click(function () {
+      const isOpen = $(this).hasClass("activeFaq");
 
-    $(".faq").removeClass("activeFaq").find(".faq_answer").slideUp();
+      $(".faq").removeClass("activeFaq").find(".faq_answer").slideUp();
 
-    if (!isOpen) {
-      $(this).addClass("activeFaq").find(".faq_answer").slideDown();
-    }
-  });
+      if (!isOpen) {
+        $(this).addClass("activeFaq").find(".faq_answer").slideDown();
+      }
+    });
+  }
 
   // Contact Form Label Animation
   const $inputs = $(".user_input input, .user_textarea textarea");
 
-  $inputs.each(function () {
-    if ($(this).val().trim() !== "") {
+  if ($inputs.length > 0) {
+    $inputs.each(function () {
+      if ($(this).val().trim() !== "") {
+        $(this).addClass("filled");
+      }
+    });
+
+    $inputs.on("focus", function () {
       $(this).addClass("filled");
-    }
-  });
+    });
 
-  $inputs.on("focus", function () {
-    $(this).addClass("filled");
-  });
+    $inputs.on("blur", function () {
+      if ($(this).val().trim() === "") {
+        $(this).removeClass("filled");
+      }
+    });
+  }
 
-  $inputs.on("blur", function () {
-    if ($(this).val().trim() === "") {
-      $(this).removeClass("filled");
-    }
-  });
-
-  $("#country_selector").countrySelect();
+  // Country Selector
+  if ($("#country_selector").length > 0 && $.fn.countrySelect) {
+    $("#country_selector").countrySelect();
+  }
 });
