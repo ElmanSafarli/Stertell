@@ -27,12 +27,32 @@ $(document).ready(function () {
     }
   });
 
+  // Scroll to top
+  $(window).on("scroll", function () {
+    const scrollTop = $(this).scrollTop();
+    const pageHeight = $(document).height();
+    const windowHeight = $(window).height();
+
+    if (scrollTop > windowHeight * 1.5) {
+      $("#scrollTop").css("display", "flex");
+    }
+
+    if (scrollTop <= 10) {
+      $("#scrollTop").fadeOut();
+    }
+  });
+
+  $("#scrollTop").on("click", function () {
+    $("html, body").animate({ scrollTop: 0 }, 600);
+    return false;
+  });
+
   // Type Animation (only if #myElement exists and TypeIt is available)
   if ($("#myElement").length > 0 && typeof TypeIt !== "undefined") {
     new TypeIt("#myElement", {
       strings:
         "We empower mobile operators and enterprises with the tools to deliver messages securely, detect fraud, and optimize traffic to drive maximum revenue.",
-      speed: 100,
+      speed: 50,
     }).go();
   }
 
