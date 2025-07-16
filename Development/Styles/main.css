@@ -87,3 +87,24 @@ html.preloader-active {
         opacity: 0.5;
     }
 }
+
+/* Cursor */
+.custom-neon-cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--accent, #00f0ff);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+        0 0 30px rgba(0, 255, 255, 0.4),
+        0 0 40px rgba(0, 255, 255, 0.3);
+    pointer-events: none;
+    z-index: 99999;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+/* Прячем системный курсор */
+#app_cursor.hovering {
+    cursor: none;
+}

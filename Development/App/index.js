@@ -1,4 +1,42 @@
 $(document).ready(function () {
+  // Cursor animation
+  if ($("#app_cursor").length > 0) {
+    const $cursor = $('<div class="custom-neon-cursor"></div>');
+    $("body").append($cursor);
+
+    const $appArea = $("#app_cursor");
+    let mouseX = 0,
+      mouseY = 0;
+    let cursorX = 0,
+      cursorY = 0;
+
+    function animateCursor() {
+      cursorX += (mouseX - cursorX) * 0.1;
+      cursorY += (mouseY - cursorY) * 0.1;
+      $cursor.css({
+        left: cursorX + "px",
+        top: cursorY + "px",
+      });
+      requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+
+    $appArea.on("mouseenter", function () {
+      $cursor.css("opacity", "1");
+      $appArea.addClass("hovering");
+    });
+
+    $appArea.on("mouseleave", function () {
+      $cursor.css("opacity", "0");
+      $appArea.removeClass("hovering");
+    });
+
+    $appArea.on("mousemove", function (e) {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+  }
+
   // Preloader
   $("html").addClass("preloader-active");
 
