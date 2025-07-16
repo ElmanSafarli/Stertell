@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Protection and Testing | SterTell</title>
+
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/Development/assets/stertell_favicon.svg"
+    />
+
+    <link rel="stylesheet" href="../Styles/main.css" />
+    <link rel="stylesheet" href="../Styles/index.css" />
+    <link rel="stylesheet" href="../Styles/solutions.css" />
+  </head>
+  <body>
+    <div id="preloader">
+      <div class="preloader_logo">
+        <svg
+          width="300"
+          viewBox="0 0 1276 1209"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="462"
+            cy="475"
+            r="82"
+            fill="#2B2DAD"
+            class="dot"
+            style="--i: 0"
+          />
+          <circle
+            cx="749"
+            cy="475"
+            r="82"
+            fill="#2B2DAD"
+            class="dot"
+            style="--i: 1"
+          />
+          <circle
+            cx="764.5"
+            cy="739.5"
+            r="97.5"
+            fill="#2B2DAD"
+            class="dot"
+            style="--i: 2"
+          />
+          <circle
+            cx="477.5"
+            cy="756.5"
+            r="97.5"
+            fill="#2B2DAD"
+            class="dot"
+            style="--i: 3"
+          />
+          <circle
+            cx="1025"
+            cy="464"
+            r="71"
+            fill="#2B2DAD"
+            class="dot"
+            style="--i: 4"
+          />
+          <circle
+            cx="1025"
+            cy="713"
+            r="71"
+            fill="#2B2DAD"
+            class="dot"
+            style="--i: 5"
+          />
+          <circle
+            cx="1016"
+            cy="917"
+            r="57"
+            fill="#2B2DAD"
+            class="dot"
+            style="--i: 6"
+          />
+          <circle
+            cx="787.5"
+            cy="936.5"
+            r="68.5"
+            fill="#2B2DAD"
+            class="dot"
+            style="--i: 7"
+          />
+          <circle
+            cx="500.5"
+            cy="959.5"
+            r="68.5"
+            fill="#2B2DAD"
+            class="dot"
+            style="--i: 8"
+          />
+          <circle
+            cx="501.5"
+            cy="1169.5"
+            r="39.5"
+            fill="#2B2DAD"
+            class="dot"
+            style="--i: 9"
+          />
+          <circle
+            cx="787.5"
+            cy="1154.5"
+            r="39.5"
+            fill="#2B2DAD"
+            class="dot"
+            style="--i: 10"
+          />
+          <circle
+            cx="265.5"
+            cy="932.5"
+            r="68.5"
+            fill="#2B2DAD"
+            class="dot"
+            style="--i: 11"
+          />
+          <circle
+            cx="256"
+            cy="464"
+            r="71"
+            fill="#2B2DAD"
+            class="dot"
+            style="--i: 12"
+          />
+          <circle
+            cx="242.5"
+            cy="699.5"
+            r="57.5"
+            fill="#2B2DAD"
+            class="dot"
+            style="--i: 13"
+          />
+          <circle
+            cx="255.5"
+            cy="257.5"
+            r="60.5"
+            fill="#2B2DAD"
+            class="dot"
+            style="--i: 14"
+          />
+          <circle
+            cx="483.5"
+            cy="248.5"
+            r="60.5"
+            fill="#2B2DAD"
+            class="dot"
+            style="--i: 15"
+          />
+          <circle
+            cx="501"
+            cy="73"
+            r="39"
+            fill="#2B2DAD"
+            class="dot"
+            style="--i: 16"
+          />
+          <circle
+            cx="726"
+            cy="39"
+            r="39"
+            fill="#2B2DAD"
+            class="dot"
+            style="--i: 17"
+          />
+          <circle
+            cx="772"
+            cy="249"
+            r="84"
+            fill="#2B2DAD"
+            class="dot"
+            style="--i: 18"
+          />
+          <circle
+            cx="1027.5"
+            cy="248.5"
+            r="68.5"
+            fill="#2B2DAD"
+            class="dot"
+            style="--i: 19"
+          />
+          <circle
+            cx="37.5"
+            cy="474.5"
+            r="37.5"
+            fill="#2B2DAD"
+            class="dot"
+            style="--i: 20"
+          />
+          <circle
+            cx="37.5"
+            cy="702.5"
+            r="37.5"
+            fill="#2B2DAD"
+            class="dot"
+            style="--i: 21"
+          />
+          <circle
+            cx="1224"
+            cy="464"
+            r="44"
+            fill="#2B2DAD"
+            class="dot"
+            style="--i: 22"
+          />
+          <circle
+            cx="1232"
+            cy="730"
+            r="44"
+            fill="#2B2DAD"
+            class="dot"
+            style="--i: 23"
+          />
+        </svg>
+      </div>
+    </div>
+
+    <button id="scrollTop" class="scrollTopBtn" title="Go to top">
+      <svg height="1.2em" class="arrow" viewBox="0 0 512 512">
+        <path
+          d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"
+        ></path>
+      </svg>
+      <p class="text">Back to Top</p>
+    </button>
+
+    <div class="dark_item">
+      <nav class="max_width">
+        <div class="navbar_content">
+          <div class="logo">
+            <a href="../index.html"
+              ><img
+                width="180"
+                style="filter: grayscale(1) brightness(1000%)"
+                src="../assets/Stertell-logo.png"
+                alt=""
+            /></a>
+          </div>
+          <div class="nav-items">
+            <ul class="nav_links">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="">About us</a></li>
+              <li class="solutions_dropdown">
+                <span>Solutions</span>
+                <ul class="solutions_dropdown_items">
+                  <li><a href="./Messaging.html">Messaging</a></li>
+                  <li><a href="./RCS.html">New Projects – RCS</a></li>
+                  <li><a href="./Enterprises.html">Enterprises</a></li>
+                  <li><a href="./Testing.html">Protection and Testing</a></li>
+                  <li><a href="./Corporate.html">Corporate Solution</a></li>
+                  <li><a href="/Development/Pages/api.html">API</a></li>
+                </ul>
+              </li>
+              <li><a href="./api.html">APİ</a></li>
+              <li><a href="">Contact us</a></li>
+            </ul>
+          </div>
+
+          <div class="nav_btn">
+            <a href="" class="btn_animated"><span>Let's Talk</span></a>
+          </div>
+
+          <div class="mobile_menu_wrapper">
+            <label for="menu-toggle" class="hamburger">
+              <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+              <svg viewBox="0 0 32 32">
+                <path
+                  class="line line-top-bottom"
+                  d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
+                ></path>
+                <path class="line" d="M7 16 27 16"></path>
+              </svg>
+
+              <div class="overlay"></div>
+
+              <div class="mobile_sidebar">
+                <ul>
+                  <li><a href="/Development/index.html">Home</a></li>
+                  <li><a href="">About Us</a></li>
+                  <li><a href="./Messaging.html">Messaging</a></li>
+                  <li><a href="./RCS.html">New Projects – RCS</a></li>
+                  <li><a href="./Enterprises.html">Enterprises</a></li>
+                  <li><a href="./Testing.html">Protection and Testing</a></li>
+                  <li><a href="./Corporate.html">Corporate Solution</a></li>
+                  <li><a href="/Development/Pages/api.html">API</a></li>
+                  <li><a href="">Contact Us</a></li>
+                </ul>
+              </div>
+            </label>
+          </div>
+        </div>
+      </nav>
+      <h1 class="page_name">Corporate Solution</h1>
+      <p class="page_path">Home / <span>Corporate Solution</span></p>
+    </div>
+
+    <div class="solution_page">
+      <div class="page_img"><img src="" alt="Corporate Solutions" /></div>
+
+      <div class="badge"><span>Stertell Solutions</span></div>
+
+      <h1>Corporate Solution — Software Development Division</h1>
+      <p class="page_desc">
+        At SterTell, our Software Development Division delivers expert
+        outsourcing services tailored to your unique business needs. We provide
+        full-stack development teams proficient in a broad range of modern
+        technologies, ready to tackle projects of any complexity.
+      </p>
+
+      <section class="advantage-section">
+        <div class="advantage-card">
+          <h2>Experienced IT Professionals at Your Service</h2>
+          <p class="lead">
+            Our team includes seasoned specialists with 20+ years of experience
+            across diverse industries, including:
+          </p>
+          <ul class="advantage-grid">
+            <li>
+              <span class="icon"><i class="fa-solid fa-city"></i></span>
+              Smart City solutions
+            </li>
+            <li>
+              <span class="icon"
+                ><i class="fa-solid fa-cart-shopping"></i
+              ></span>
+              E-commerce platforms
+            </li>
+            <li>
+              <span class="icon"><i class="fa-solid fa-building"></i></span>
+              Real estate technology
+            </li>
+            <li>
+              <span class="icon"><i class="fa-solid fa-briefcase"></i></span>
+              Professional services
+            </li>
+            <li>
+              <span class="icon"><i class="fa-brands fa-bitcoin"></i></span>
+              Blockchain applications
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="cta-box">
+        <h2>Build Smarter. Scale Faster.</h2>
+        <p>
+          Whether you're launching a new product or modernizing an enterprise
+          system, SterTell's expert developers and tailored solutions empower
+          you to deliver with confidence and speed.
+        </p>
+        <a href="#" class="cta-button">Request Consultation</a>
+      </div>
+    </div>
+
+    <footer class="dark_item">
+      <div class="footer_content max_width">
+        <div class="footer_top">
+          <h2>Let's <span>Connect</span> there</h2>
+          <a href="">
+            <span>Contact us</span>
+            <span class="arrow">
+              <svg
+                width="17"
+                height="14"
+                viewBox="0 0 17 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1 6.1C0.502944 6.1 0.1 6.50294 0.1 7C0.1 7.49706 0.502944 7.9 1 7.9V6.1ZM16.6364 7.6364C16.9879 7.28492 16.9879 6.71508 16.6364 6.3636L10.9088 0.636039C10.5574 0.284567 9.98751 0.284567 9.63604 0.636039C9.28457 0.987511 9.28457 1.55736 9.63604 1.90883L14.7272 7L9.63604 12.0912C9.28457 12.4426 9.28457 13.0125 9.63604 13.364C9.98751 13.7154 10.5574 13.7154 10.9088 13.364L16.6364 7.6364ZM1 7V7.9H16V7V6.1H1V7Z"
+                  fill="#fff"
+                />
+              </svg>
+            </span>
+          </a>
+        </div>
+        <div class="footer_main">
+          <div>
+            <div class="footer_logo">
+              <a href="/Development/index.html">
+                <img
+                  width="186"
+                  style="filter: grayscale(1) brightness(1000%)"
+                  src="../assets/Stertell-logo.png"
+                  alt="SterTell logo"
+                />
+              </a>
+            </div>
+            <p class="footer_text">
+              SterTell — Trusted partner for global telecom solutions,
+              messaging, and network protection.
+            </p>
+            <div class="social_links_f">
+              <a href="" aria-label="instagram">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/company/stertell/"
+                aria-label="linkedin"
+              >
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a
+                href="https://www.facebook.com/profile.php?id=100086738514430"
+                aria-label="facebook"
+              >
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a href="" aria-label="telegram">
+                <i class="fa-brands fa-telegram"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer_links">
+            <ul>
+              <h4>Navigation</h4>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="">About us</a></li>
+              <li><a href="./Messaging.html">Messaging</a></li>
+              <li><a href="./RCS.html">New Projects – RCS</a></li>
+              <li><a href="./Enterprises.html">Enterprises</a></li>
+              <li><a href="./Testing.html">Protection and Testing</a></li>
+              <li><a href="./Corporate.html">Corporate Solution</a></li>
+              <li><a href="/Development/Pages/api.html">API</a></li>
+              <li><a href="./api.html">API</a></li>
+            </ul>
+            <ul>
+              <h4>Contact us</h4>
+              <li><a href="tel:+35724020230">+35724020230</a></li>
+              <li><a href="mailto:info@stertell.com">info@stertell.com</a></li>
+              <li>
+                <a
+                  href="https://www.bing.com/maps?&ty=18&q=Ithakis%203%20C1-301%2C%20Nicosia%2C%20Strovolos%202058%2C%20CY&mb=35.150826~33.331179~35.143125~33.347064&cardbg=%23F98745&dt=1752645600000&tt=Ithakis%203%2C%202058%20%CE%A3%CF%84%CF%81%CF%8C%CE%B2%CE%BF%CE%BB%CE%BF%CF%82%2C%20%CE%9A%CF%8D%CF%80%CF%81%CE%BF%CF%82&tsts0=%2526ty%253D18%2526q%253DIthakis%2525203%252520C1-301%25252C%252520Nicosia%25252C%252520Strovolos%2525202058%25252C%252520CY%2526mb%253D35.150826~33.331179~35.143125~33.347064%2526cardbg%253D%252523F98745%2526dt%253D1752645600000&tstt0=Ithakis%203%2C%202058%20%CE%A3%CF%84%CF%81%CF%8C%CE%B2%CE%BF%CE%BB%CE%BF%CF%82%2C%20%CE%9A%CF%8D%CF%80%CF%81%CE%BF%CF%82&cp=35.146976~33.335868&lvl=16.71&pi=0&ftst=0&ftics=False&v=2&sV=2&form=S00027"
+                  >Ithakis 3 C1-301, Nicosia, Strovolos 2058, CY</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer_bottom">
+          <span>© 2023 Uyuldata Ltd (Cyprus). All rights reserved</span>
+          <a href="">Use Terms & Conditions | Privacy Policy</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/d17c83b3d5.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Скрипты -->
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <script src="../App/index.js"></script>
+  </body>
+</html>
