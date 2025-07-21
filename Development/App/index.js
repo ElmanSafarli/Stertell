@@ -157,6 +157,7 @@ $(document).ready(function () {
   if ($("#country_selector").length > 0 && $.fn.countrySelect) {
     $("#country_selector").countrySelect({
       defaultCountry: "ru",
+      responsiveDropdown: true,
     });
   }
 });
