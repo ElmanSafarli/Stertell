@@ -1,0 +1,253 @@
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+
+.api-section {
+    margin-bottom: 40px;
+}
+
+.api-section h2 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: var(--accent);
+}
+
+.description {
+    margin-bottom: 10px;
+}
+
+pre {
+    border-radius: 8px;
+    background-color: #0d1117;
+    padding: 16px;
+    overflow-x: auto;
+}
+
+code {
+    font-family: "Courier New", monospace;
+    font-size: 14px;
+    color: var(--white);
+}
+
+.note {
+    margin-top: 12px;
+    font-size: 13px;
+    color: #555;
+    background: #f0f0f0;
+    padding: 10px 14px;
+    border-left: 4px solid var(--accent);
+    border-radius: 4px;
+}
+
+.api-doc-table-wrapper {
+    margin-top: 60px;
+    overflow-x: auto;
+}
+
+.api-params-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 14px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.api-params-table thead {
+    background-color: #2e2e2e;
+    text-align: left;
+}
+
+.api-params-table th,
+.api-params-table td {
+    padding: 16px 20px;
+    vertical-align: top;
+    border-bottom: 1px solid #333;
+    min-width: 160px;
+}
+
+.api-params-table th {
+    font-size: 15px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.api-params-table td code {
+    background-color: #333;
+    color: #00e0ff;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+.api-params-table tr:hover {
+    background-color: #292929;
+}
+
+.api-params-table .required {
+    color: #10d410;
+    font-weight: bold;
+}
+
+.api-params-table .optional {
+    color: #aaa;
+}
+
+.response-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.response-section h3 {
+    font-size: 20px;
+    margin-top: 30px;
+    color: #444;
+}
+
+.response-section p,
+.response-section li {
+    color: #555;
+    line-height: 1.6;
+}
+
+.response-section code {
+    background: #f1f1f1;
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: var(--black);
+    font-size: 0.95em;
+}
+
+.response-box {
+    background-color: #f9f9f9;
+    border-left: 4px solid var(--accent);
+    padding: 15px 20px;
+    margin: 15px 0;
+    white-space: pre-line;
+    overflow-x: auto;
+    font-family: monospace;
+    font-size: 14px;
+    color: #333;
+}
+
+.response-box.error {
+    border-color: #e53935;
+    background-color: #fff3f3;
+    color: #b71c1c;
+}
+
+.response-section h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.response-section h2 {
+    font-size: 24px;
+    margin-top: 30px;
+    color: #444;
+}
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.styled-table th,
+.styled-table td {
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.styled-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.response-section {
+    margin: 0 auto;
+}
+
+.response-section h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.response-section h4 {
+    font-size: 18px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.response-section p {
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.response-section ul {
+    margin: 0 0 20px 20px;
+    padding: 0;
+    list-style: disc;
+    color: #444;
+}
+
+.response-section code {
+    background-color: #f4f4f4;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+    color: #d63384;
+}
+
+.response-block {
+    background-color: #f9f9f9;
+    border-left: 4px solid #28a745;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    overflow-x: auto;
+}
+
+.response-block.error {
+    border-left-color: #dc3545;
+    background-color: #fcebea;
+}
+
+.response-block pre {
+    margin: 0;
+    white-space: pre-wrap;
+    word-break: break-all;
+    font-family: monospace;
+    color: var(--white);
+}
+
+@media (max-width: 768px) {
+
+    .container {
+        padding: 40px 20px;
+    }
+
+    .api-doc-table-wrapper {
+        overflow-x: auto;
+    }
+
+    .api-params-table {
+        display: block;
+        width: max-content;
+    }
+
+    .api-params-table th,
+    .api-params-table td {
+        width: 80px;
+    }
+}
