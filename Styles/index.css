@@ -74,7 +74,7 @@
 }
 
 /* Button Animation */
-.btn_animated,
+/* .btn_animated,
 .btn_animated *,
 .btn_animated :after,
 .btn_animated :before,
@@ -163,7 +163,54 @@
 .btn_animated:hover:after,
 .btn_animated:hover:before {
     --progress: 0;
+} */
+
+
+.btn_animated {
+    position: relative;
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background-color: var(--accent);
+    color: var(--white);
+    border-radius: 99rem;
+    font-weight: 700;
+    text-decoration: none;
+    overflow: hidden;
+    transition: color 0.3s ease;
+    z-index: 0;
 }
+
+.btn_animated span {
+    position: relative;
+    z-index: 2;
+    transition: color 0.4s ease;
+}
+
+.btn_animated::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: var(--white);
+    border-radius: 20%;
+    transform: translate(-50%, -50%);
+    transition: width 0.4s ease, height 0.4s ease, border-radius 0.4s ease;
+    z-index: 1;
+}
+
+.btn_animated:hover::before {
+    width: 200%;
+    height: 200%;
+    border-radius: 30%;
+}
+
+.btn_animated:hover span {
+    color: var(--black);
+}
+
+
 
 /* Hamburger */
 .hamburger {
