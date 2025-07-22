@@ -41,27 +41,23 @@ $(document).ready(function () {
   $("html").addClass("preloader-active");
 
   $(window).on("load", function () {
-    setTimeout(function () {
-      $("#preloader").fadeOut(500, function () {
-        $("html").removeClass("preloader-active");
-      });
-    }, 1000);
+    $("#preloader").fadeOut(400, function () {
+      $("html").removeClass("preloader-active");
+    });
   });
 
   $(document).on("pjax:start", function () {
     if ($("#preloader").length > 0) {
-      $("#preloader").fadeIn(400);
+      $("#preloader").fadeIn(200);
       $("html").addClass("preloader-active");
     }
   });
 
   $(document).on("pjax:end", function () {
     if ($("#preloader").length > 0) {
-      setTimeout(function () {
-        $("#preloader").fadeOut(500, function () {
-          $("html").removeClass("preloader-active");
-        });
-      }, 1000);
+      $("#preloader").fadeOut(400, function () {
+        $("html").removeClass("preloader-active");
+      });
     }
   });
 
